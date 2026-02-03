@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      font-family: Arial;
+      height: 100vh;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: red;
+      color: white;
+    }
+
+    #no {
+      background-color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MUSIC -->
+  <audio id="bgMusic">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- QUESTION -->
+  <h1>Will you be my Valentine, Harsh? 💘</h1>
+
+  <!-- PHOTO -->
+  <img src="photo.jpg">
+
+  <br><br>
+
+  <!-- BUTTONS -->
+  <button id="yes" onclick="yes()">Yes ❤️</button>
+  <button id="no" onmouseover="move()">No 💔</button>
+
+  <script>
+    function yes() {
+      document.getElementById("bgMusic").play();
+
+      document.body.innerHTML = `
+        <h1>Yay Harsh! I knew it 😍💖</h1>
+        
+        <img src="photo.jpg">
+
+        <p style="font-size:20px;">
+          My laddu 🧿💋❤️
+        </p>
+
+        <p style="font-size:20px;">
+          I love you.<br>
+          I love talking to you.<br>
+          I love annoying you.<br>
+          And I love the way you make me smile 💖
+        </p>
+
+        <h3>Happy Valentine’s Day 😘🌹</h3>
+      `;
+    }
+
+    function move() {
+      let x = Math.random() * (window.innerWidth - 100);
+      let y = Math.random() * (window.innerHeight - 50);
+      document.getElementById("no").style.left = x + "px";
+      document.getElementById("no").style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
+
+
